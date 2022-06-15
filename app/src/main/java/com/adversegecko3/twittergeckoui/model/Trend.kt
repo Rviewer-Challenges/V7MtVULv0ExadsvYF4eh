@@ -6,8 +6,3 @@ data class Trend(
     val quantity: Int,
     val image: TrendImage? = null
 )
-
-data class TrendImage(
-    val imageType: Int,
-    val image: Int
-)

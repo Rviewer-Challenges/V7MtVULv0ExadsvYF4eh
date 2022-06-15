@@ -152,12 +152,14 @@ fun ItemSpace(space: Space) {
                             )
                         }
                     }
-                    Text(
-                        text = space.description,
-                        color = Color.White,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
-                    )
+                    if (space.description.isNotEmpty()) {
+                        Text(
+                            text = space.description,
+                            color = Color.White,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
                 }
             }
         }

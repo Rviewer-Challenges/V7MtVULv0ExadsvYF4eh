@@ -67,7 +67,7 @@ fun ItemTweet(
                         modifier = Modifier.padding(start = 4.dp)
                     )
                     Text(
-                        text = tweet.timeAgo,
+                        text = calculateDate(tweet.timeAgo),
                         color = Color.Gray,
                         modifier = Modifier.padding(start = 4.dp)
                     )
@@ -191,12 +191,29 @@ fun ItemTweet(
     Divider()
 }
 
+private fun calculateDate(timeAgo: Long): String {
+    return when {
+        timeAgo < 60 * 1000 -> {
+            "${timeAgo / 1000}s"
+        }
+        timeAgo < 60 * 60 * 1000 -> {
+            "${timeAgo / (60 * 1000)}m"
+        }
+        timeAgo < 24 * 60 * 60 * 1000 -> {
+            "${timeAgo / (60 * 60 * 1000)}h"
+        }
+        else -> {
+            "${timeAgo / (24 * 60 * 60 * 1000)}d"
+        }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewItemTweet() {
     val tweet = Tweet(
         user = User("AdverseGecko3", "adversegecko3", R.drawable.profile_adversegecko3),
-        timeAgo = "1h",
+        timeAgo = 24 * 60 * 60 * 1000,
         content = "Hello, world!" +
                 "\nI'm AdverseGecko3 and TwitterGeckoUI is AWESOME!" +
                 "\n\nSee ya!",
