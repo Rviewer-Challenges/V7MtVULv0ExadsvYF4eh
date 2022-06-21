@@ -17,7 +17,7 @@ class TwitterRepository {
                 user = User("AdverseGecko3", "adversegecko3", R.drawable.profile_adversegecko3),
                 timeAgo = 6 * hours,
                 content = "Hello, world!" +
-                        "\nI'm AdverseGecko3 and TwitterGeckoUI is AWESOME!" +
+                        "\nI'm AdverseGecko3 and TwitterGecko is AWESOME!" +
                         "\n\nSee ya!",
                 numComments = 2,
                 numRetweets = 0,
@@ -27,7 +27,7 @@ class TwitterRepository {
                 user = User("Elon Musk", "elonmusk", R.drawable.profile_elonmusk),
                 timeAgo = 15 * hours,
                 content = "Well, Twitter deal is finally Done." +
-                        "\nWe will implement TwitterGeckoUI." +
+                        "\nWe will implement TwitterGecko." +
                         "\nOh, and FYI, editing tweets is already being developed " +
                         String(Character.toChars(0x1F609)),
                 numComments = 18_945,
@@ -233,6 +233,139 @@ class TwitterRepository {
                 host = "TechMex",
                 description = "",
                 alColors = selectSpacesColor()
+            )
+        )
+    }
+
+    fun getAllCommunities(): List<Community> {
+        return listOf(
+            Community(
+                name = "IlloJuan City " +
+                        String(Character.toChars(0x1F1F3)) +
+                        String(Character.toChars(0x1F1EC)),
+                image = R.drawable.community_illojuan_city,
+                color = Color(0xFF8D2090)
+            ),
+            Community(
+                name = "Homies",
+                image = R.drawable.community_homies,
+                color = Color.Black
+            ),
+            Community(
+                name = "MoureDev " +
+                        String(Character.toChars(0x1F4BB)),
+                image = R.drawable.community_mouredev,
+                color = Color(0xFF0198E6)
+            ),
+            Community(
+                name = "F1 2022 " +
+                        String(Character.toChars(0x1F3CE)) +
+                        String(Character.toChars(0x1F3C1)),
+                image = R.drawable.community_f1,
+                color = Color.Red
+            ),
+            Community(
+                name = "Black Hat " +
+                        String(Character.toChars(0x1F9D1)) +
+                        String(Character.toChars(0x200D)) +
+                        String(Character.toChars(0x1F4BB)),
+                image = R.drawable.community_blackhat,
+                color = Color.Black
+            )
+        )
+    }
+
+    fun getAllCommunityTweets(): List<Tweet> {
+        return listOf(
+            Tweet(
+                user = User("Nanosecso", "Nanosecso", R.drawable.profile_nanosecso),
+                timeAgo = 6 * hours,
+                content = "A MI ME ESTAN GRABANDO. @AlpineF1Team VAMOS A POR TI",
+                numComments = 33,
+                numRetweets = 102,
+                numLikes = 1_185,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "F1 2022 " + String(Character.toChars(0x1F3CE)) +
+                            String(Character.toChars(0x1F3C1))
+                )
+            ),
+            Tweet(
+                user = User("AdverseGecko3", "adversegecko3", R.drawable.profile_adversegecko3),
+                timeAgo = 15 * hours,
+                content = "Bueno, pues ya he entregado mi clon de Twitter. Buena experiencia entendiendo Jetpack Compose!" +
+                        "Ahora solo toca perfeccionar!! " + String(Character.toChars(0x1F4AA)),
+                numComments = 2,
+                numRetweets = 1,
+                numLikes = 8,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "MoureDev " + String(Character.toChars(0x1F4BB))
+                )
+            ),
+            Tweet(
+                user = User("Elon Musk", "elonmusk", R.drawable.profile_elonmusk),
+                timeAgo = 15 * hours,
+                content = "Well, Twitter deal is finally Done." +
+                        "\nWe will implement TwitterGecko." +
+                        "\nOh, and FYI, editing tweets is already being developed " +
+                        String(Character.toChars(0x1F609)),
+                numComments = 18_945,
+                numRetweets = 524_978,
+                numLikes = 13_494_688,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "Black Hat " + String(Character.toChars(0x1F9D1)) +
+                            String(Character.toChars(0x200D)) +
+                            String(Character.toChars(0x1F4BB))
+                )
+            ),
+            Tweet(
+                user = User("Brais Moure", "MoureDev", R.drawable.profile_mouredev),
+                timeAgo = (1 * hours) + (17 * minutes),
+                content = "Buenas a todos!\nAcabo de subir un nuevo tutorial de Jetpack Compose. " +
+                        "En él comento el equivalente del RecyclerView, llamado LazyColumn (o LazyRow)" +
+                        "\nSi os gusta no olvideis suscribiros y dejar like!",
+                numComments = 12,
+                numRetweets = 10,
+                numLikes = 349,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "MoureDev " + String(Character.toChars(0x1F4BB))
+                )
+            ),
+            Tweet(
+                user = User("IlloJuan", "LMDShow", R.drawable.profile_lmdshow),
+                timeAgo = 2 * hours,
+                content = "Illo que man liao.\n\nAhora que viene el calorcito estoy más tiempo fuera de casa con los amigos " +
+                        "y quizá haga menos directos\n\nNO CE ME QUEJEI " +
+                        String(Character.toChars(0x1F621)) + String(Character.toChars(0x1F621)) +
+                        "\n\nEso si, mañana directo pasándonos Subnautica " +
+                        "y las secundarias de God of War " +
+                        String(Character.toChars(0x1F608)),
+                numComments = 967,
+                numRetweets = 2_567,
+                numLikes = 59_637,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "IlloJuan City " + String(Character.toChars(0x1F1F3)) +
+                            String(Character.toChars(0x1F1EC))
+                )
+            ),
+            Tweet(
+                user = User("Formula 1", "F1", R.drawable.profile_f1),
+                timeAgo = 4 * hours,
+                content = "IT'S RACE WEEK!!!\n\nFormula 1 returns to Great Britain in the 12th round of 2022!" +
+                        "\n\nSome of the best moments from the previous years" +
+                        String(Character.toChars(0x1F447)) + ":",
+                numComments = 367,
+                numRetweets = 5_097,
+                numLikes = 26_970,
+                topInfo = TweetTopInfo(
+                    icon = R.drawable.ic_nav_communities_selected,
+                    text = "F1 2022 " + String(Character.toChars(0x1F3CE)) +
+                            String(Character.toChars(0x1F3C1))
+                )
             )
         )
     }

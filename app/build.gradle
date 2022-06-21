@@ -10,8 +10,8 @@ android {
         applicationId "com.adversegecko3.twittergeckoui"
         minSdk 23
         targetSdk 32
-        versionCode 17
-        versionName "1.0.16"
+        versionCode 22
+        versionName "1.0.21"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

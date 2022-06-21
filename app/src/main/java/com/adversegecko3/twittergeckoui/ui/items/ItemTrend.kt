@@ -22,6 +22,7 @@ import com.adversegecko3.twittergeckoui.R
 import com.adversegecko3.twittergeckoui.model.Trend
 import com.adversegecko3.twittergeckoui.model.TrendImage
 import com.adversegecko3.twittergeckoui.reformatNumbers
+import com.adversegecko3.twittergeckoui.ui.theme.TwitterGray
 
 @Composable
 fun ItemTrend(trend: Trend) {
@@ -37,7 +38,7 @@ fun ItemTrend(trend: Trend) {
                         Text(
                             text = trend.type,
                             fontSize = 12.sp,
-                            color = Color.Gray,
+                            color = TwitterGray,
                             modifier = Modifier.padding(bottom = 4.dp)
                         )
                         Text(
@@ -56,7 +57,7 @@ fun ItemTrend(trend: Trend) {
                 Text(
                     text = "${trend.quantity.reformatNumbers()} Tweets",
                     fontSize = 12.sp,
-                    color = Color.Gray,
+                    color = TwitterGray,
                     modifier = Modifier.padding(vertical = 4.dp)
                 )
             }
@@ -124,7 +125,7 @@ fun ItemTrend(trend: Trend) {
                         Text(
                             text = trend.type,
                             fontSize = 12.sp,
-                            color = Color.Gray,
+                            color = TwitterGray,
                             modifier = Modifier.padding(bottom = 4.dp)
                         )
                         Text(

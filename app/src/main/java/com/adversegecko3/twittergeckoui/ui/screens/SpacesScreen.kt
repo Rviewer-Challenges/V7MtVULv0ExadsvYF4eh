@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import com.adversegecko3.twittergeckoui.R
 import com.adversegecko3.twittergeckoui.repo.TwitterRepository
 import com.adversegecko3.twittergeckoui.ui.items.ItemSpace
+import com.adversegecko3.twittergeckoui.ui.theme.TwitterGray
 
 @Composable
 fun SpacesScreen() {
@@ -111,7 +111,7 @@ fun TextSpaces(alTexts: ArrayList<String>) {
             Text(
                 text = alTexts[1],
                 fontSize = 12.sp,
-                color = Color.Gray
+                color = TwitterGray
             )
         }
     }

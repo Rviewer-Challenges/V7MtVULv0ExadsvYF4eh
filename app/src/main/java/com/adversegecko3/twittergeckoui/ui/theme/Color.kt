@@ -7,6 +7,8 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
+val TwitterGray = Color(0xFF71767B)
+
 val SearchBackgroundDark = Color(0xFF202327)
 val SearchBackgroundLight = Color(0xFFEFF3F4)
 

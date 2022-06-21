@@ -10,7 +10,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.*
+import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
@@ -20,7 +23,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
@@ -32,7 +34,9 @@ import androidx.compose.ui.unit.sp
 import com.adversegecko3.twittergeckoui.R
 import com.adversegecko3.twittergeckoui.repo.TwitterRepository
 import com.adversegecko3.twittergeckoui.ui.items.ItemTrend
-import com.adversegecko3.twittergeckoui.ui.theme.*
+import com.adversegecko3.twittergeckoui.ui.theme.SearchBackgroundDark
+import com.adversegecko3.twittergeckoui.ui.theme.SearchBackgroundLight
+import com.adversegecko3.twittergeckoui.ui.theme.TwitterGray
 
 @Composable
 fun SearchScreen() {
@@ -91,7 +95,7 @@ fun TopBarSearchScreen() {
                     if (textState.value.isEmpty()) {
                         Text(
                             text = "Search Twitter",
-                            color = Color.Gray,
+                            color = TwitterGray,
                             fontSize = 14.sp
                         )
                     }

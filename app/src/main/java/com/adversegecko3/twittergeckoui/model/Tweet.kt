@@ -6,5 +6,6 @@ data class Tweet(
     val content: String,
     val numComments: Int,
     val numRetweets: Int,
-    val numLikes: Int
+    val numLikes: Int,
+    val topInfo: TweetTopInfo? = null
 )
