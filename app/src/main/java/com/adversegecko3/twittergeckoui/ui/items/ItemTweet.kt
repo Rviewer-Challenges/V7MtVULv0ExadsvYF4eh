@@ -254,7 +254,6 @@ fun ItemTweet(
                 }
             }
         }
-
     }
     Divider()
 }

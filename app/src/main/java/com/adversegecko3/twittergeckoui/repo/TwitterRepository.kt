@@ -89,7 +89,7 @@ class TwitterRepository {
                 numLikes = 437_987
             ),
             Tweet(
-                user = User("PlayStation", "PlayStation", R.drawable.profile_elonmusk),
+                user = User("PlayStation", "PlayStation", R.drawable.profile_playstation),
                 timeAgo = days + (53 * minutes),
                 content = "Yes, another fan favorite exclusive PS game is coming to PC!" +
                         "\nSpider-Man remastered will arrive the 12th of August.",
@@ -366,6 +366,158 @@ class TwitterRepository {
                     text = "F1 2022 " + String(Character.toChars(0x1F3CE)) +
                             String(Character.toChars(0x1F3C1))
                 )
+            )
+        )
+    }
+
+    fun getAllNotifications(): List<Any> {
+        return listOf(
+            Notification(
+                type = 0,
+                actionType = 1,
+                people = hashMapOf(
+                    "IlloJuan" to R.drawable.profile_lmdshow,
+                    "Elon Musk" to R.drawable.profile_elonmusk,
+                    "F1" to R.drawable.profile_f1
+                )
+            ),
+            Notification(
+                type = 1,
+                actionType = 3,
+                people = hashMapOf(
+                    "MoureDev" to R.drawable.profile_mouredev
+                )
+            ),
+            Notification(
+                type = 3,
+                actionType = 1,
+                people = hashMapOf(
+                    "Slipknot" to R.drawable.profile_slipknot,
+                    "Nanosecso" to R.drawable.profile_nanosecso
+                ),
+                tweetContent = "Pues la verdad que mi hype por el nuevo álbum @Slipknot está por las nubes. " +
+                        "Si el nano gana alguna carrera de F1 ya seria la bomba",
+                tweetContentLinkText = listOf("@Slipknot"),
+                tweetContentHyperlinks = listOf("")
+            ),
+            Tweet(
+                user = User("Brais Moure", "MoureDev", R.drawable.profile_mouredev),
+                timeAgo = (1 * hours) + (17 * minutes),
+                content = "Que bonito es ver como la comunidad nos unimos para hacer proyectos " +
+                        "y asi demostrar las habilidades de cada uno!" +
+                        "\nHoy quiero darle visibilidad a @AdverseGecko3, con su clon de Twitter llamado" +
+                        "TwitterGecko!\n\nPor aqui es dejo el link de su repo: github.com/AdverseGecko3/TwitterGecko",
+                numComments = 12,
+                numRetweets = 10,
+                numLikes = 349
+            ),
+            Notification(
+                type = 0,
+                actionType = 0,
+                people = hashMapOf(
+                    "Elon Musk" to R.drawable.profile_elonmusk,
+                    "Nvidia GeForce" to R.drawable.profile_nvidiageforce,
+                    "IlloJuan" to R.drawable.profile_lmdshow,
+                    "Nanosecso" to R.drawable.profile_nanosecso,
+                    "Slipknot" to R.drawable.profile_slipknot
+                )
+            ),
+            Notification(
+                type = 2,
+                actionType = 0,
+                people = hashMapOf(
+                    "Elon Musk" to R.drawable.profile_elonmusk,
+                    "F1" to R.drawable.profile_f1,
+                    "Nvidia GeForce" to R.drawable.profile_nvidiageforce,
+                ),
+                tweetContent = "Que ganas de que acabe el verano por dios, esto es insoportable #TeamInvierno",
+                tweetContentLinkText = listOf("#TeamInvierno"),
+                tweetContentHyperlinks = listOf("")
+            ),
+            Tweet(
+                user = User("Brais Moure", "MoureDev", R.drawable.profile_mouredev),
+                timeAgo = (1 * hours) + (17 * minutes),
+                content = "Buenas a todos!\nAcabo de subir un nuevo tutorial de Jetpack Compose. " +
+                        "En él comento el equivalente del RecyclerView, llamado LazyColumn (o LazyRow)" +
+                        "\nSi os gusta no olvideis suscribiros y dejar like!",
+                numComments = 12,
+                numRetweets = 10,
+                numLikes = 349
+            ),
+            Notification(
+                type = 1,
+                actionType = 1,
+                people = hashMapOf(
+                    "MoureDev" to R.drawable.profile_mouredev,
+                    "Nvidia GeForce" to R.drawable.profile_nvidiageforce,
+                    "F1" to R.drawable.profile_lmdshow
+                )
+            ),
+            Notification(
+                type = 4,
+                actionType = 2,
+                people = hashMapOf(
+                    "Nanosecso" to R.drawable.profile_nanosecso,
+                    "MoureDev" to R.drawable.profile_mouredev
+                ),
+                tweetContent = "No no, que pensaba que esa app era en Swift y no en Kotlin, sry",
+                tweetContentLinkText = listOf(""),
+                tweetContentHyperlinks = listOf("")
+            ),
+        )
+    }
+
+    fun getAllDirectMessages(): List<DirectMessage> {
+        return listOf(
+            DirectMessage(
+                user = User("Elon Musk", "elonmusk", R.drawable.profile_elonmusk),
+                timeAgo = 15 * hours,
+                content = "Hey do u mind if we include some TwitterGecko ideas to Twitter? We can pay you with a trip to space"
+            ),
+            DirectMessage(
+                user = User("Brais Moure", "MoureDev", R.drawable.profile_mouredev),
+                timeAgo = (1 * hours) + (17 * minutes),
+                content = "Hey! Acuérdate que la entrega de este mes es el dia 28!!!"
+            ),
+            DirectMessage(
+                user = User("IlloJuan", "LMDShow", R.drawable.profile_lmdshow),
+                timeAgo = 2 * hours,
+                content = "Hermano quieres que juegue a algún juego del año 1980? O del 1983?"
+            ),
+            DirectMessage(
+                user = User("Formula 1", "F1", R.drawable.profile_f1),
+                timeAgo = 4 * hours,
+                content = "You have won 2 VIP ticket for this week race at Silverstone! Congratulations!!!"
+            ),
+            DirectMessage(
+                user = User("NVIDIA GeForce", "NVIDIAGeForce", R.drawable.profile_nvidiageforce),
+                timeAgo = days + (3 * hours) + (29 * minutes),
+                content = "Check out our new RTX Series Cards!"
+            ),
+            DirectMessage(
+                user = User("Slipknot", "Slipknot", R.drawable.profile_slipknot),
+                timeAgo = 48 * minutes,
+                content = "Prepare for the worst.\nPrepare for the worst nightmare of your life."
+            ),
+            DirectMessage(
+                user = User("PlayStation", "PlayStation", R.drawable.profile_playstation),
+                timeAgo = days + (53 * minutes),
+                content = "Yes, you can check all details of the new Spider-Man PC Version at our website."
+            ),
+            DirectMessage(
+                user = User("Nanosecso", "nanosecso", R.drawable.profile_nanosecso),
+                timeAgo = (14 * hours),
+                content = "FILMACIÓN"
+            ),
+            DirectMessage(
+                user = User("Ibai", "Ibai Llanos", R.drawable.profile_ibai),
+                timeAgo = (12 * minutes),
+                content = "Grandeeee, mañana te paso el 25% de lo ganado por subs en la velada"
+            ),
+            DirectMessage(
+                user = User("Steam", "Steam", R.drawable.profile_steam),
+                timeAgo = (5 * days),
+                content = "We're checking with our team, thanks for sharing the bug!"
             )
         )
     }

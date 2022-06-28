@@ -1,7 +1,12 @@
 package com.adversegecko3.twittergeckoui.ui.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -20,6 +25,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.adversegecko3.twittergeckoui.R
+import com.adversegecko3.twittergeckoui.model.Notification
+import com.adversegecko3.twittergeckoui.model.Tweet
+import com.adversegecko3.twittergeckoui.repo.TwitterRepository
+import com.adversegecko3.twittergeckoui.ui.items.ItemNotification
+import com.adversegecko3.twittergeckoui.ui.items.ItemTweet
 
 @Composable
 fun NotificationsScreen() {
@@ -32,7 +42,7 @@ fun NotificationsScreen() {
 fun AllNotificationsScreen() {
     Column {
         TopBarNotificationsScreen()
-        SimpleText5()
+        NotificationsFeed()
     }
 }
 
@@ -73,17 +83,18 @@ fun TopBarNotificationsScreen() {
 }
 
 @Composable
-fun SimpleText5() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "NotificationsScreen",
-            color = MaterialTheme.colors.primary,
-            fontSize = MaterialTheme.typography.h4.fontSize,
-            fontWeight = FontWeight.Bold
-        )
+fun NotificationsFeed() {
+    val twitterRepository = TwitterRepository()
+    val allNotifications = twitterRepository.getAllNotifications()
+
+    LazyColumn {
+        items(items = allNotifications) { notification ->
+            if (notification is Tweet) {
+                ItemTweet(tweet = notification)
+            } else if (notification is Notification) {
+                ItemNotification(notification = notification)
+            }
+        }
     }
 }
 

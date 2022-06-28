@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
@@ -24,12 +26,13 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.adversegecko3.twittergeckoui.R
+import com.adversegecko3.twittergeckoui.repo.TwitterRepository
+import com.adversegecko3.twittergeckoui.ui.items.ItemDirectMessage
 import com.adversegecko3.twittergeckoui.ui.theme.SearchBackgroundDark
 import com.adversegecko3.twittergeckoui.ui.theme.SearchBackgroundLight
 import com.adversegecko3.twittergeckoui.ui.theme.TwitterGray
@@ -45,7 +48,7 @@ fun DirectMessagesScreen() {
 fun AllDirectMessagesScreen() {
     Column {
         TopBarDirectMessagesScreen()
-        SimpleText4()
+        DirectMessageFeed()
     }
 }
 
@@ -117,17 +120,14 @@ fun TopBarDirectMessagesScreen() {
 }
 
 @Composable
-fun SimpleText4() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "DirectMessagesScreen",
-            color = MaterialTheme.colors.primary,
-            fontSize = MaterialTheme.typography.h4.fontSize,
-            fontWeight = FontWeight.Bold
-        )
+fun DirectMessageFeed() {
+    val twitterRepository = TwitterRepository()
+    val allDirectMessages = twitterRepository.getAllDirectMessages()
+
+    LazyColumn {
+        items(items = allDirectMessages) { directMessage ->
+            ItemDirectMessage(directMessage = directMessage)
+        }
     }
 }
 
