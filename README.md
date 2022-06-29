@@ -1,5 +1,28 @@
 # Twitter Mirroring
 
+## APK 
+![Download APK](https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/release/TwitterGecko.apk)
+
+## Screenshots
+
+### Home
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/home.jpg" width="400">
+
+### Search
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/search.jpg" width="400">
+
+### Spaces
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/spaces.jpg" width="400">
+
+### Communities
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/communities.jpg" width="400">
+
+### Notifications
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/notifications.jpg" width="400">
+
+### Direct Messages
+<img src="https://github.com/AdverseGecko3/TwitterGecko/blob/main/app/src/main/res/drawable-v24/Screenshots/direct_messages.jpg" width="400">
+
 Who doesn't have a Twitter account? One of the biggest and controversial social networks of this decade, which has
 been revamped multiple times due to its UX problems.
 
